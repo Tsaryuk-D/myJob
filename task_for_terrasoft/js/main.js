@@ -1,27 +1,57 @@
 ;(function ($) {
     $(document).ready(function () {
 
-        $('.works__slider-cont').slick({
-            dots: true,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        });
-
-        $('.team__slider-cont').slick({
+        $('.slider').slick({
             dots: false,
-            slidesToShow: 3,
-            slidesToScroll: 1,
+            arrows: false,
+            focusOnSelect: true,
+            autoplay: true,
+            centerMode: true,
+            autoplaySpeed: 2000,
+            centerPadding:'0px',
+            infinite: false,
+            edgeFriction: '0.5',
+            pauseOnDotsHover: true,
+            cssEase: 'ease-in',
             responsive: [
                 {
-                    breakpoint: 900,
+                    breakpoint: 1100,
                     settings: {
-                        slidesToShow: 2
+                        arrows: false,
+                        dots: false
+
                     }
                 },
                 {
-                    breakpoint: 600,
+                    breakpoint: 960,
                     settings: {
-                        slidesToShow: 1
+                        arrows: true,
+                        dots: true
+
+                    }
+                },
+                {
+                    breakpoint: 800,
+                    settings: {
+                        arrows: true,
+                        dots: false
+
+                    }
+                },
+                {
+                    breakpoint: 640,
+                    settings: {
+                        arrows: false,
+                        dots: true
+
+                    }
+                },
+                {
+                    breakpoint: 400,
+                    settings: {
+                        arrows: false,
+                        dots: true
+
                     }
                 }
             ]
@@ -64,7 +94,7 @@
         $('.menu-contacts').click(function () {
             $('.overlay').trigger('click');
             $('html, body').animate({
-                scrollTop: $('.contact').offset().top
+                scrollTop: $('.footer').offset().top
             }, 300);
         });
 
