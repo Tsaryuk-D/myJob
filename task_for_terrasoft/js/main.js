@@ -23,10 +23,10 @@
                     }
                 },
                 {
-                    breakpoint: 960,
+                    breakpoint: 1024,
                     settings: {
                         arrows: true,
-                        dots: true
+                        dots: false
 
                     }
                 },
