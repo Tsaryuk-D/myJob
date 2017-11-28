@@ -11,7 +11,7 @@
     <title>Terrasoft</title>
 </head>
 <body>
-<header>
+<header id="header">
     <div class="row-cont">
             <div class="logo">
                 <a href="#">
@@ -107,6 +107,20 @@
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
 <script src="js/slick.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+    var avatarElem = document.getElementById('header');
+
+    var avatarSourceBottom = avatarElem.getBoundingClientRect().bottom + window.pageYOffset;
+
+    window.onscroll = function() {
+        if (avatarElem.classList.contains('fixed') && window.pageYOffset < avatarSourceBottom) {
+            avatarElem.classList.remove('fixed');
+        } else if (window.pageYOffset > avatarSourceBottom) {
+            avatarElem.classList.add('fixed');
+        }
+    };
+</script>
+
 <script type="text/javascript">$(document).ready(function(){
     var touch = $('#mobile_menu');
     var menu = $('.basic_menu');

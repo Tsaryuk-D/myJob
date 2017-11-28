@@ -35,6 +35,12 @@ header {
   color: #fff;
   font-family: "PT Sans", Arial, sans-serif; }
 
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%; }
+
 .logo {
   float: left;
   padding-top: 20px;
@@ -139,6 +145,12 @@ a {
     right: 0;
     width: 150px;
     background: rgba(81, 95, 103, 0.85); } }
+@media screen and (max-width: 769px) {
+  .fixed {
+    position: relative;
+    width: 100%;
+    top: 0;
+    z-index: 1000; } }
 #mobile_menu {
   display: none;
   width: 60px;
@@ -334,6 +346,8 @@ a {
   /* Цвет текста */ }
 
 .footer .row-cont {
+  padding-top: 25px;
+  padding-bottom: 25px;
   display: flex;
   justify-content: space-between; }
   .footer .row-cont .footer_menu ul a {
