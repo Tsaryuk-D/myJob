@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Terrasoft</title>
+    <title>Task_for_Terrasoft</title>
 </head>
 <body>
 <header id="header">
@@ -21,8 +21,8 @@
                 </a>
             </div>
             <div class="phone_number_1">
-                <p>+7(499)777-77-77</p>
-                <p>+7(499)777-77-77</p>
+                <p> +7(499) 777-77-77<span></span></p>
+                <p> +7(499) 777-77-77<span></span></p>
             </div>
             <div class="clear"></div>
         </div>
@@ -104,48 +104,30 @@
         </div>
 </footer>
 <script src="js/jquery-3.2.0.min.js"></script>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
 <script src="js/slick.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/script.js"></script>
+
+<!--geotargeting start-->
+<script charset="utf-8" src="http://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
+
 <script>
-    var avatarElem = document.getElementById('header');
-
-    var avatarSourceBottom = avatarElem.getBoundingClientRect().bottom + window.pageYOffset;
-
-    window.onscroll = function() {
-        if (avatarElem.classList.contains('fixed') && window.pageYOffset < avatarSourceBottom) {
-            avatarElem.classList.remove('fixed');
-        } else if (window.pageYOffset > avatarSourceBottom) {
-            avatarElem.classList.add('fixed');
+    $(document).ready(function() {
+        if (YMaps.location.country != '') {
+            var youCountry = (YMaps.location.country);
+            if (youCountry === "Украина"){
+                $('.phone_number_1 p span').text('+3 (062) 777 77 77');
+            }
+            else if (youCountry === "Россия"){
+                $('.phone_number_1 p span').text('+7 (449) 888 88 88');
+            }
+            else {
+                $('.phone_number_1 p span').text('+0 (000) 000 00 00');
+            }
         }
-    };
-</script>
 
-<script type="text/javascript">$(document).ready(function(){
-    var touch = $('#mobile_menu');
-    var menu = $('.basic_menu');
-
-    $(touch).on('click', function(e) {
-        e.preventDefault();
-        menu.slideToggle();
     });
-    $(window).resize(function(){
-        var wid = $(window).width();
-        if(wid > 768 && menu.is(':hidden')) {
-            menu.removeAttr('style');
-        }
-    });
-});</script>
-<script>var mMenu = document.getElementById('mobile_menu');
-var first_s = document.querySelector('.first');
-var second_s = document.querySelector('.second');
-var third_s = document.querySelector('.third');
-
-mMenu.onclick = function() {
-    first_s.classList.toggle('activ_span_one');
-    second_s.classList.toggle('activ_span_two');
-    third_s.classList.toggle('activ_span_three');
-}
 </script>
+<!--geotargeting end-->
 </body>
 </html>
