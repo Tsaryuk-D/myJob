@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Task_for_Terrasoft</title>
 </head>
-<body>
+<body onload="getLocation()">
 <header id="header">
     <div class="row-cont">
             <div class="logo">
@@ -103,6 +103,21 @@
         </div>
         </div>
 </footer>
+<script>
+    var x = document.getElementById("coordinates");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+    }
+</script>
 <script src="js/jquery-3.2.0.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/main.js"></script>
